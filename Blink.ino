@@ -26,12 +26,12 @@ void ensureWiFiConnected() {// this funtion is made to ensure the wifi connectio
         if (WiFi.status() == WL_CONNECTED) {//if the wifi is connected print out cnnected 
             Serial.println("Connected!");
         } else {
-            Serial.println("Failed to reconnect.");
+            Serial.println("Failed to reconnect."); //if wifi fails to connect
         }
     }
 }
 
-void sendIFTTTNotification(String event) {
+void sendIFTTTNotification(String event) { // function that is used for triggering the IFTTT
     ensureWiFiConnected(); // first wifi will connect, 
 = 
     WiFiClient wifi;
@@ -55,7 +55,7 @@ void setup() {
 }
 
 void loop() {
-    int lightValue = analogRead(lightSensorPin); // for reading the value of the light from th
+    int lightValue = analogRead(lightSensorPin); // for reading the value of the light from the ligt sensor
     Serial.print("Light Sensor Value: ");
     Serial.println(lightValue);
 
